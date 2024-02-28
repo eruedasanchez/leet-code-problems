@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/000-merge-sorted-array/mergeSortedArray.ts"
+    "exec": "ts-node ./src/001-remove-element/removeElement.ts"
 }
