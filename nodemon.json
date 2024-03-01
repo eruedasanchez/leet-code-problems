@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/002-remove-duplicates-I/removeDuplicatesI.ts"
+    "exec": "ts-node ./src/003-majority-element/majorityElement.ts"
 }
