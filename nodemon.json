@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/005-rotate-array/rotateArray.ts"
+    "exec": "ts-node ./src/020-reverse-words-in-string/reverseWordsInString.ts"
 }
