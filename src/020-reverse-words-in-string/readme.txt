@@ -75,3 +75,4 @@ Hay al menos una palabra en s.
  
  Seguimiento: si el tipo de datos de cadena es mutable en su lenguage,
  ¿Puedes resolverlo in situ con O(1) espacio extra?
+ 
