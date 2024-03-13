@@ -13,5 +13,3 @@ const strStr = (haystack: string, needle: string) : number => {
     return indexNeedleInHaystack;
 };
 
-let hola = strStr("sadbutsad", "sad");
-console.log(hola);
