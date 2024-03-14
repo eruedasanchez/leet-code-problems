@@ -1,18 +1,14 @@
-function removeDuplicates(nums: (number | '_')[]): number {
-    let duplicates: '_'[] = [];
-
-    for (let i = 1; i < nums.length; i++) {
-        for (let j = 0; j < i; j++) {
-            if(nums[j] === nums[i]){
-                duplicates.push('_');
-                nums.splice(i,1);
-                i--;
-                break;
-            }
+const removeDuplicates = (nums: (number | '_')[]) : number => {
+    let i = 0, j = 1, distinctCounter = 1;
+    while(j < nums.length) {
+        if(nums[i] === nums[j]){
+            nums[j] = '_';
+            j++;
+        } else {
+            i++;
+            distinctCounter++;
+            j === i ? j++ : nums[i] = nums[j];
         }
     }
-    
-    nums = [...nums, ...duplicates];
-    
-    return nums.length - duplicates.length;
-};
+    return distinctCounter;
+}
