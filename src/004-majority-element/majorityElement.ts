@@ -1,33 +1,23 @@
 const majorityElement = (nums: number[]) : number => {
-    let majorityElement = -1, maxValue = -1;
-    let limitAppear = Math.round(nums.length / 2);
+    let limitAppear = Math.trunc(nums.length / 2);
+    let valuesOcurrences: [number, number][] = [];
 
-    // find max number in array
-    for(const number of nums){
-        if(number > maxValue) maxValue = number;
-    }
+    for (let i = 0; i < nums.length; i++) {
+        let indexCurrentOcurrenceValue = valuesOcurrences.findIndex(tuple => tuple[0] === nums[i]);
+        let currentValueOcurrences: [number, number] = [-1, -1];
 
-    // creo array lleno de 0's de longitud maxValue
-    let countingArray: number[] = [];
-    for (let index = 0; index <= maxValue; index++) {
-        countingArray[index] = 0;
-    }
-
-    
-    for (let j = 0; j < nums.length; j++) {
-        countingArray[nums[j]] = countingArray[nums[j]] + 1;
-    }
-
-    
-    for (let k = 0; k < countingArray.length; k++) {
-        if(countingArray[k] >= limitAppear){
-            majorityElement = k;
-            break; 
+        if(indexCurrentOcurrenceValue === -1){
+            currentValueOcurrences[0] = nums[i];
+            currentValueOcurrences[1] = 1; 
+            valuesOcurrences.push(currentValueOcurrences);
+        } else {
+            valuesOcurrences[indexCurrentOcurrenceValue][1]++;
         }
     }
-    
-    return majorityElement;
-};
 
-let res = majorityElement([3,2,3]);
-console.log(res);
+    let j = 0;
+    while(j < valuesOcurrences.length && valuesOcurrences[j][1] <= limitAppear){
+        j++;
+    }
+    return valuesOcurrences[j][0];
+}
