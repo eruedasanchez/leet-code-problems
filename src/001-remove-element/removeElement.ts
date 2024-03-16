@@ -1,17 +1,3 @@
-// function removeElement(nums: (number | '_')[], val: number): number {
-//     let distinctVal: '_'[] = [];  
-    
-//     for (let index = 0; index < nums.length; index++) {
-//         while(nums[index] === val){
-//             nums.splice(index, 1);
-//             distinctVal.push('_');
-//         }
-//     }
-    
-//     nums = [...nums, ...distinctVal];
-//     return nums.length - distinctVal.length;
-// };
-
 const removeElement = (nums: (number | '_')[], val: number) : number => {
     let valueOccurrences = 0;
     let tmpValue: number | '_' = 0;
@@ -27,5 +13,5 @@ const removeElement = (nums: (number | '_')[], val: number) : number => {
             nums[nums.length-valueOccurrences] = '_'; 
         }
     }
-    return valueOccurrences;
+    return nums.length - valueOccurrences;
 }
