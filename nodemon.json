@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/016-roman-to-integer/romanToInteger.ts"
+    "exec": "ts-node ./src/017-integer-to-roman/integerToRoman.ts"
 }
