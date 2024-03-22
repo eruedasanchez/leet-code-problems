@@ -14,6 +14,3 @@ const summaryRanges = (nums: number[]) : string[] => {
     }
     return ranges;
 };
-
-let juan = summaryRanges([0,1,2,4,5,7]); 
-console.log('res:', juan);
