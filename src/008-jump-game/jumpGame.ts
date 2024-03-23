@@ -1,59 +1,31 @@
-// function canJump(nums: number[]) : boolean {
-//     let reachTheFinal = true;
-//     let indexZero = nums.indexOf(0);
-
-//     if(indexZero === 1){
-//         if(nums[0] < nums.length - 1){
-//             reachTheFinal = false;
-//             return reachTheFinal;
-//         }
-//     } else if(indexZero !== -1 && indexZero !== nums.length - 1){
-//         // el 0 se encuentra en nums y 
-//         // no esta en la ultima posicion
-//         let i = 1
-        
-//         while(i <= indexZero && 
-//             ((nums[i-1] === nums[i] + 1) || (nums[i-1] === nums[i]))){
-//                 i++;
-//             } 
-        
-//         if(indexZero === i-1){
-//             reachTheFinal = false;
-//             return reachTheFinal;
-//         }
-//     }
-//     return reachTheFinal;
-// };
-
-
 const WALL = 0;
 
-function canJump(nums: number[]) : boolean {
-    let reachTheFinal = true;
+const canJump = (nums: number[]) : boolean => {
+    let reachToTheFinal = true;
+    let mainIndex = 0;
+    while (mainIndex < nums.length - 1) {
+        let jumper = mainIndex;
+        while(jumper < nums.length - 1 && nums[jumper] !== WALL){
+            jumper += nums[jumper];
+        }
 
-    for (let i = 0; i < nums.length; i++) {
-        if(nums[i] === WALL){
-            let j = i;
-            let count = 0;
-            while(j > 0 && nums[j] === nums[j-1] - 1){
-                j--;
-                count++;
+        if(jumper >= nums.length - 1){
+            mainIndex = nums.length;
+        } else {
+            let backsteps = jumper-1;  
+            while (backsteps >= 0 && backsteps < nums.length && backsteps + nums[backsteps] <= jumper) {
+                backsteps--;
             }
-
-            if(j === 0 || count >= nums[j-1]) reachTheFinal = false;
+        
+            if(backsteps < 0){
+                reachToTheFinal = false;
+                mainIndex = nums.length;
+            } else if(nums[backsteps] === WALL){
+                mainIndex = backsteps;
+            } else if(backsteps + nums[backsteps] > jumper){
+                mainIndex = backsteps + nums[backsteps]; 
+            }
         }
     }
-    
-    
-    
-    
-    return reachTheFinal; 
+    return reachToTheFinal;
 }
-
-
-
-// [3,0,8,2,0,0,1]
-let result = canJump([3,0,8,2,0,0,1]);
-console.log(result);
-
-// CORREGIR!
