@@ -32,5 +32,9 @@ console.log(ressdsjd);
 
 
 
+// [24,12,8,12]
+
+
+
 
 

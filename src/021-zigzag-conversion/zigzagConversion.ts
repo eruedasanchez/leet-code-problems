@@ -13,7 +13,7 @@ const convert = (s: string, numRows: number) : string => {
 // ['PAYP', 'AL', 'ISHI', 'IR', 'NG']
 
 
-// P    I
-// A  L S
+// P    I    N
+// A  L S   IG
 // Y A  H R
 // P    I
