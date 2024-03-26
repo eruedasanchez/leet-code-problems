@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/plus-one/plusOne.ts"
+    "exec": "ts-node ./src/sqrt/sqrt.ts"
 }
