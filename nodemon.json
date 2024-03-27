@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/add-binary/addBinary.ts"
+    "exec": "ts-node ./src/number-of-one-bit/numberOfOneBit.ts"
 }
