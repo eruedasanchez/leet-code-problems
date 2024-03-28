@@ -24,7 +24,4 @@ const searchInsert = (nums: number[], target: number) : number => {
     }
 };
 
-let search = searchInsert([1,3,5,6], 2);
-console.log('res:', search);
-
 
