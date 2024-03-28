@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/reverse-bits/reverseBits.ts"
+    "exec": "ts-node ./src/search-insert-position/searchInsertPosition.ts"
 }
