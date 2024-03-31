@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/search-2D-matrix/search2DMatrix.ts"
+    "exec": "ts-node ./src/single-number-II/singleNumberII.ts"
 }

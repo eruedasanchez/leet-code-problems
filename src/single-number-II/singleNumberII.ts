@@ -1,18 +1,38 @@
-function singleNumberTwo(nums: number[]): number {
+const singleNumberTwo = (nums: number[]) : number => {
     nums.sort((num1, num2) => num1 - num2);
-    let single = nums[0];
-
-    for (let j = 1; j < nums.length; j++) {
-        if (single !== nums[j]) {
-            single = nums[j];
+    
+    let i = 0;
+    let single = nums[i];
+    let ocurrenciesSingleNumber = 0;
+    while (i < nums.length) {
+        let j = i;
+        while (j < nums.length && single === nums[j]) {
+            ocurrenciesSingleNumber++;
+            j++;
         } 
+        
+        if (single !== nums[j]) {
+            if (ocurrenciesSingleNumber === 3) {
+                single = nums[j];
+                ocurrenciesSingleNumber = 0;
+                i = j;
+            } else {
+                single = nums[j-1];
+                i = nums.length;
+            }
+        }
     }
-
-    console.log(nums);
-
+    
     return single;
 }
 
-let singleTwo = singleNumberTwo([0,99,0,1,0,99,99]);
+let singleTwo = singleNumberTwo([2,2,3,2]);
 console.log('singleTwo:', singleTwo);
 
+
+// [2,2,3,2] -> [2,2,2,3] 
+
+
+
+
+[0,0,0,1,1,1,2,2,2,3,6,6,6,7,7,7]
