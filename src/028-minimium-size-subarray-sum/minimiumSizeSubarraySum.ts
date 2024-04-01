@@ -1,33 +1,13 @@
-const minSubArrayLen = (target: number, nums: number[]) : number => {
-    if(nums.length === 1){
-        if(nums[0] === target){
-            return 1;
-        } else {
-            return 0;
-        }
-    }
+const minSubArrayLen = (target: number, nums: number[]) : number =>  {
+    let minimalLength = 0;
     
-    let half = Math.trunc(nums.length / 2);
-    let leftSubArray = nums.slice(0, half);
-    let rightSubArray = nums.slice(half, nums.length);  
-    let minSubArrayLeft = minSubArrayLen(target, leftSubArray);
-    let minSubArrayRight = minSubArrayLen(target, rightSubArray);
     
-    // let minSubArrayLeftRight = 0;
-    // for (let l = 0; l < leftSubArray.length; l++){
-    //     let r = l;
-    //     if(leftSubArray[l] + rightSubArray[r] < target){
-    //         r++;
-
-    //     }
-        
-    // }
-
-
     
-    // return Math.min(minSubArrayLeft, minSubArrayLeftRight, minSubArrayRight);
-    return 0;
+    return minimalLength;
+    
 };
+
+// [2,3,1,2,4,3], 7
 
 
 

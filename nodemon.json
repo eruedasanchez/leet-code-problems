@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/single-number-II/singleNumberII.ts"
+    "exec": "ts-node ./src/set-matrix-zeroes/setMatrixZeroes.ts"
 }
