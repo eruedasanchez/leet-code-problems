@@ -2,5 +2,5 @@
     "watch": ["src"],
     "ext": ".ts .js",
     "ignore": ["node_modules"],
-    "exec": "ts-node ./src/isomorphic-string/isomorphicString.ts"
+    "exec": "ts-node ./src/valid-anagram/validAnagram.ts"
 }
